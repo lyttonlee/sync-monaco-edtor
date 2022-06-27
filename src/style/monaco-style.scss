@@ -1,0 +1,22 @@
+.yRemoteSelection {
+  background-color: rgb(250, 129, 0, .5)
+}
+.yRemoteSelectionHead {
+  position: absolute;
+  border-left: orange solid 2px;
+  border-top: orange solid 2px;
+  border-bottom: orange solid 2px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.yRemoteSelectionHead::after {
+  position: absolute;
+  content: 'lzr';
+  // border: 3px solid orange;
+  // border-radius: 4px;
+  left: 0;
+  // top 值应按行高设定
+  top: -5px;
+  font-size: 0.1em;
+  color: rgb(19, 19, 18);
+}
