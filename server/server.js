@@ -1,29 +1,33 @@
-const Websocket = require('ws')
-const http = require('http')
+const Websocket = require('ws');
+const http = require('http');
 
-const StaticServer = require('node-static').Server
+const StaticServer = require('node-static').Server;
 
-const setupWSConnection = require('y-websocket/bin/utils').setupWSConnection
+const setupWSConnection = require('y-websocket/bin/utils').setupWSConnection;
 
-const production = false
-const PORT = 9500
+const production = false;
+const PORT = 9500;
 
-const staticServer = new StaticServer('./', { cache: 300, gzip: production })
+const staticServer = new StaticServer('./', { cache: 300, gzip: production });
 
-const server = http.createServer((req, res) => { 
-  req.addListener('end', () => { 
-    staticServer.serve(req, res)
-  }).resume()
-})
+const server = http.createServer((req, res) => {
+  req
+    .addListener('end', () => {
+      staticServer.serve(req, res);
+    })
+    .resume();
+});
 
-const ws = new Websocket.Server({ server })
+const ws = new Websocket.Server({ server });
 
-ws.on('connection', (conn, req) => { 
+ws.on('connection', (conn, req) => {
+  // console.log(conn.protocol);
+  console.log(req.url);
   setupWSConnection(conn, req, {
-    gc: true
-  })
-})
+    gc: true,
+  });
+});
 
-server.listen(PORT, () => { 
-  console.log(`the server is running on port: ${PORT}`)
-})
+server.listen(PORT, () => {
+  console.log(`the server is running on port: ${PORT}`);
+});

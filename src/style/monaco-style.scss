@@ -1,5 +1,5 @@
 .yRemoteSelection {
-  background-color: rgb(250, 129, 0, .5)
+  background-color: rgb(250, 129, 0, 0.5);
 }
 .yRemoteSelectionHead {
   position: absolute;
@@ -11,7 +11,7 @@
 }
 .yRemoteSelectionHead::after {
   position: absolute;
-  content: 'lzr';
+  content: attr(data-user);
   // border: 3px solid orange;
   // border-radius: 4px;
   left: 0;
