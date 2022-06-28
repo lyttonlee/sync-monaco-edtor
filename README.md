@@ -1,16 +1,27 @@
-# Vue 3 + TypeScript + Vite
+# sync-monaco-editor
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> Vue 3 + TypeScript + Vite
 
-## Recommended IDE Setup
+## 启动
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+```sh
+# 安装依赖
+pnpm install
 
-## Type Support For `.vue` Imports in TS
+# 启动本地node服务，用于协同编辑的交换服务
+pnpm run serve
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+# 启动前端工程服务
+pnpm run dev
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+```
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+### 端口
+
+- server 端口为 9500
+
+- 本地应用端口 9200
+
+### 协同编辑
+
+可使用多个浏览器或多个客户端访问业务系统地址测试
